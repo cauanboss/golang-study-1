@@ -5,6 +5,8 @@ import (
 	adapter "main/adapter/mongo"
 )
 
+var collectionName = "user"
+
 type User struct {
 	Id    string `json:"_id" bson:"_id"`
 	Name  string `json:"name" bson:"name"`
@@ -12,5 +14,5 @@ type User struct {
 }
 
 func Repository() *mongo.Collection {
-	return adapter.GetCollection("user")
+	return adapter.GetCollection(collectionName)
 }
